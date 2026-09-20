@@ -60,8 +60,8 @@ Streamlit Dashboard Inference & Feature Importance
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/credit-default-risk.git
-   cd credit-default-risk
+   git clone https://github.com/your-username/defaulting.git
+   cd defaulting
    ```
 
 2. **Ensure `dataset_morosidad.csv` is present in the root directory.**
