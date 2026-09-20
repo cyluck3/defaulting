@@ -31,11 +31,9 @@ def load_and_train_model():
         "Microcredito": "Microloan"
     })
 
-    # --- FEATURE ENGINEERING SIMPLE Y EFECTIVO ---
     data["dti_ratio"] = data["installment_amount"] / data["monthly_income"]
     data["utilization_per_tenure"] = data["line_utilization_rate"] / (data["months_tenure"] + 1)
     
-    # Nuevas variables enfocadas en la tasa de interés:
     data["monthly_interest_amount"] = (data["installment_amount"] * (data["anual_interest_rate"] / 100)) / 12
     data["interest_burden_ratio"] = data["monthly_interest_amount"] / data["monthly_income"]
 
@@ -63,8 +61,7 @@ def load_and_train_model():
             ('cat', cat_transformer, categorical_features)
         ]
     )
-
-    # Modelo estándar y limpio sin restricciones manuales
+    
     model = ImbPipeline(
         steps=[
             ('preprocessor', preprocessor),
